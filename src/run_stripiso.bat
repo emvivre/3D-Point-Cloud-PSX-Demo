@@ -1,0 +1,1 @@
+STRIPISO.EXE s 2352 xa.img demo_full.iso

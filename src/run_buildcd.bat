@@ -1,0 +1,1 @@
+BUILDCD.EXE -ixa.img xa.cti

@@ -1,0 +1,54 @@
+Define LicensePath C:\psyq\cdgen\lcnsfile\
+Define LicenseFile licensee.dat
+
+Disc CDROMXA_PSX
+
+	CatalogNumber 0000000000000
+
+	LeadIn XA
+		Empty 1000
+		PostGap 150
+	EndTrack
+    
+	Track XA
+		Pause 150
+		Volume ISO9660
+			SystemArea [LicensePath][LicenseFile]			
+			PrimaryVolume ;start point of primary volume
+				SystemIdentifier "PLAYSTATION" ;required indetifier (do not change)
+				VolumeIdentifier "XA_DEMO" ;app specific identifiers (changeable)
+				VolumeSetIdentifier "XADEMO" ;app specific identifiers (changeable)
+				PublisherIdentifier "SCEE" ;app specific identifiers (changeable)
+				DataPreparerIdentifier "SONY" ;app specific identifiers (changeable)
+				ApplicationIdentifier "PLAYSTATION" ;required indetifier (do not change)
+				LPath ;path tables as specified for PlayStation
+				OptionalLpath
+				MPath
+				OptionalMpath
+				Hierarchy ;start point of root directory definition
+					XAFileAttributes  Form1 Audio
+					XAVideoAttributes ApplicationSpecific
+					XAAudioAttributes ADPCM_C Stereo
+					File SYSTEM.CNF
+						XAFileAttributes Form1 Data
+						Source c:\psyq\projects\demo\full\system.cnf
+					EndFile
+					File MAIN.EXE
+						XAFileAttributes Form1 Data
+						Source c:\psyq\projects\demo\full\main.exe
+					EndFile					
+                    File MUSIC.XA							
+						XASource c:\psyq\projects\demo\full\music.xa
+					EndFile					
+				EndHierarchy
+			EndPrimaryVolume
+		EndVolume
+		Empty 300
+		PostGap 150	
+	EndTrack
+    
+	LeadOut XA
+		Empty 150
+	EndTrack
+    
+EndDisc
